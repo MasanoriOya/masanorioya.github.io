@@ -1,13 +1,1304 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <title>Masanori Oya (大矢政徳）</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masanori Oya, Ph.D. | Academic Homepage</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        scholarly: {
+                            50: '#f0f5fa',
+                            100: '#e1ecf5',
+                            200: '#c5dcee',
+                            300: '#9bc4e2',
+                            400: '#6ba8d3',
+                            500: '#468cc3',
+                            600: '#3172aa',
+                            700: '#265b8b',
+                            800: '#214d73',
+                            900: '#1b3f5e',
+                            950: '#0f273d'
+                        },
+                        navy: {
+                            800: '#162942',
+                            900: '#0f1f33',
+                            950: '#0a1524'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Academic and Navigation Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Mandatory Times New Roman typography */
+        body, html, * {
+            font-family: 'Times New Roman', Times, Baskerville, Georgia, serif !important;
+        }
+
+        .academic-border {
+            border-color: #cbd5e1;
+        }
+
+        .card-shadow {
+            box-shadow: 0 4px 18px rgba(15, 39, 61, 0.05);
+        }
+
+        .hero-pattern {
+            background-color: #0f273d;
+            background-image: radial-gradient(#265b8b 0.75px, transparent 0.75px), radial-gradient(#1b3f5e 0.75px, #0f273d 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+        }
+
+        .nav-blur {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        /* Subtle scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #94a3b8;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
+    </style>
 </head>
-<body>
-  <p>Masanori Oya (大矢政徳）</p>
-  <p>Welcome to my personal website.</p>
+<body class="bg-[#f7fafc] text-slate-900 antialiased selection:bg-scholarly-200 selection:text-scholarly-950 flex flex-col min-h-screen">
+
+    <!-- Sticky Navigation Header -->
+    <header class="sticky top-0 z-50 bg-[#0f273d]/95 nav-blur border-b border-scholarly-800 text-white shadow-md transition-all">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="#hero" class="text-xl sm:text-2xl tracking-wide font-bold hover:text-scholarly-200 transition-colors flex items-center gap-2">
+                    <span class="inline-block w-2.5 h-2.5 rounded-full bg-scholarly-400"></span>
+                    <span>Masanori Oya, Ph.D.</span>
+                </a>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="hidden md:flex items-center space-x-6 text-sm lg:text-base font-medium">
+                    <a href="#about" class="hover:text-scholarly-300 transition-colors py-1 border-b-2 border-transparent hover:border-scholarly-300">About</a>
+                    <a href="#appointments" class="hover:text-scholarly-300 transition-colors py-1 border-b-2 border-transparent hover:border-scholarly-300">Appointments</a>
+                    <a href="#education" class="hover:text-scholarly-300 transition-colors py-1 border-b-2 border-transparent hover:border-scholarly-300">Education</a>
+                    <a href="#grants" class="hover:text-scholarly-300 transition-colors py-1 border-b-2 border-transparent hover:border-scholarly-300">Grants</a>
+                    <a href="#publications" class="hover:text-scholarly-300 transition-colors py-1 border-b-2 border-transparent hover:border-scholarly-300">Publications</a>
+                    <a href="#presentations" class="hover:text-scholarly-300 transition-colors py-1 border-b-2 border-transparent hover:border-scholarly-300">Presentations</a>
+                    <a href="#teaching" class="hover:text-scholarly-300 transition-colors py-1 border-b-2 border-transparent hover:border-scholarly-300">Teaching & Service</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex md:hidden">
+                    <button id="mobile-menu-btn" type="button" class="text-slate-200 hover:text-white p-2 rounded focus:outline-none" aria-label="Toggle Navigation">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#162942] border-t border-scholarly-700 px-4 pt-3 pb-5 space-y-2 text-base">
+            <a href="#about" class="block py-2 text-slate-100 hover:text-scholarly-300 border-b border-slate-700/60">About</a>
+            <a href="#appointments" class="block py-2 text-slate-100 hover:text-scholarly-300 border-b border-slate-700/60">Appointments</a>
+            <a href="#education" class="block py-2 text-slate-100 hover:text-scholarly-300 border-b border-slate-700/60">Education</a>
+            <a href="#grants" class="block py-2 text-slate-100 hover:text-scholarly-300 border-b border-slate-700/60">Grants & Funding</a>
+            <a href="#publications" class="block py-2 text-slate-100 hover:text-scholarly-300 border-b border-slate-700/60">Publications</a>
+            <a href="#presentations" class="block py-2 text-slate-100 hover:text-scholarly-300 border-b border-slate-700/60">Presentations</a>
+            <a href="#teaching" class="block py-2 text-slate-100 hover:text-scholarly-300">Teaching & Service</a>
+        </div>
+    </header>
+
+    <!-- Hero Academic Banner -->
+    <section id="hero" class="hero-pattern text-white py-14 sm:py-20 border-b border-scholarly-800 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+                <div class="space-y-4 max-w-3xl">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-scholarly-900/90 text-scholarly-200 border border-scholarly-600/50 rounded-full text-xs sm:text-sm tracking-wider uppercase">
+                        <i class="fa-solid fa-university text-scholarly-400"></i> Meiji University &bull; School of Global Japanese Studies
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
+                        Masanori Oya, Ph.D.
+                    </h1>
+                    <p class="text-lg sm:text-xl text-scholarly-200 italic font-medium leading-relaxed">
+                        Professor of English Linguistics & Computational Corpus Linguistics
+                    </p>
+                    <p class="text-sm sm:text-base text-slate-300 leading-relaxed pt-1">
+                        Specializing in quantitative syntax, syntactic typed-dependency trees, graph-centrality measures, Universal Dependencies (UD), propositional idea density, and bilingual parallel corpora.
+                    </p>
+
+                    <!-- Profile External Links Requested -->
+                    <div class="pt-4 flex flex-wrap gap-3">
+                        <a href="https://gufaculty360.georgetown.edu/s/contact/003UH00000xdw71YAA/masanori-oya" target="_blank" rel="noopener noreferrer"
+                           class="inline-flex items-center gap-2 px-4 py-2 rounded bg-scholarly-700 hover:bg-scholarly-600 text-white text-sm font-semibold transition shadow-md border border-scholarly-500/40">
+                            <i class="fa-solid fa-graduation-cap text-scholarly-200"></i>
+                            Georgetown Faculty 360
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-75"></i>
+                        </a>
+
+                        <a href="https://researchmap.jp/m_oya?lang=en" target="_blank" rel="noopener noreferrer"
+                           class="inline-flex items-center gap-2 px-4 py-2 rounded bg-scholarly-800 hover:bg-scholarly-700 text-scholarly-100 text-sm font-semibold transition shadow-md border border-scholarly-600/50">
+                            <i class="fa-solid fa-book-bookmark text-scholarly-300"></i>
+                            Researchmap Profile
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-75"></i>
+                        </a>
+
+                        <a href="https://github.com/MasanoriOya" target="_blank" rel="noopener noreferrer"
+                           class="inline-flex items-center gap-2 px-4 py-2 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 text-sm font-semibold transition shadow-md border border-slate-600">
+                            <i class="fa-brands fa-github text-slate-300"></i>
+                            GitHub (@MasanoriOya)
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-75"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Academic Info Quick Card -->
+                <div class="w-full lg:w-80 bg-scholarly-900/85 backdrop-blur-sm p-6 rounded-lg border border-scholarly-700 text-slate-200 text-sm space-y-3 shadow-xl">
+                    <h2 class="text-base font-bold text-white border-b border-scholarly-700 pb-2 flex items-center justify-between">
+                        <span>Contact & Affiliation</span>
+                        <i class="fa-solid fa-address-card text-scholarly-400"></i>
+                    </h2>
+                    <div>
+                        <span class="text-xs font-semibold text-scholarly-300 uppercase block tracking-wider">Institution</span>
+                        <p class="font-medium text-white">Meiji University</p>
+                        <p class="text-xs text-slate-300">School of Global Japanese Studies</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-scholarly-300 uppercase block tracking-wider">Office Address</span>
+                        <p class="text-xs leading-relaxed text-slate-300">
+                            4-21-1 Nakano, Nakano City, Tokyo 164-8525, Japan
+                        </p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-scholarly-300 uppercase block tracking-wider">E-mail</span>
+                        <a href="mailto:masanori_oya2019@meiji.ac.jp" class="text-scholarly-300 hover:underline break-all text-xs">
+                            masanori_oya2019@meiji.ac.jp
+                        </a>
+                        <span class="text-slate-400 text-xs block">/ oya@meiji.ac.jp</span>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-scholarly-300 uppercase block tracking-wider">Visiting Affiliation</span>
+                        <p class="text-xs text-slate-300">
+                            Visiting Scholar, Department of Linguistics, Georgetown University
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow space-y-16">
+
+        <!-- Section 1: About & Research Overview -->
+        <section id="about" class="scroll-mt-20">
+            <div class="flex items-center gap-3 mb-6 border-b border-slate-300 pb-3">
+                <span class="p-2.5 rounded bg-scholarly-100 text-scholarly-800">
+                    <i class="fa-solid fa-compass-drafting text-xl"></i>
+                </span>
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-scholarly-950">Research Overview & Interests</h2>
+                    <p class="text-sm text-slate-600 italic">Quantitative syntax, formal grammatical frameworks, and parallel corpus analysis</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Overview Text -->
+                <div class="md:col-span-2 bg-white p-6 sm:p-7 rounded-lg border academic-border card-shadow leading-relaxed text-slate-800 space-y-4">
+                    <p class="text-base leading-relaxed">
+                        My research program centers at the intersection of <strong>computational linguistics, English linguistics, and quantitative syntax</strong>. I investigate syntactic dependency structures, treebank-based deep linguistic resource acquisition, and graph-theoretical centrality metrics applied to natural language sentences.
+                    </p>
+                    <p class="text-base leading-relaxed">
+                        My recent investigations examine <strong>mean dependency distances (MDD)</strong> across multilingual parallel corpora, the distribution of long-tail low-frequency long-distance dependencies, and degree centrality as an objective metric of robustness in large-scale English learner corpora. Furthermore, I explore the formal syntactic representation of understudied and constructed varieties, including Universal Dependencies (UD) treebanks for Esperanto.
+                    </p>
+                    <div class="pt-2">
+                        <h4 class="font-bold text-scholarly-900 text-sm tracking-wide uppercase mb-3">Key Research Pillars:</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                            <div class="flex items-start gap-2 bg-scholarly-50 p-3 rounded border border-scholarly-100">
+                                <i class="fa-solid fa-diagram-project text-scholarly-600 mt-1"></i>
+                                <span><strong>Syntactic Dependency Trees:</strong> Graph metrics, degree centrality & distance distributions.</span>
+                            </div>
+                            <div class="flex items-start gap-2 bg-scholarly-50 p-3 rounded border border-scholarly-100">
+                                <i class="fa-solid fa-code-compare text-scholarly-600 mt-1"></i>
+                                <span><strong>Parallel Corpora:</strong> Japanese-English structural divergences and propositional idea density.</span>
+                            </div>
+                            <div class="flex items-start gap-2 bg-scholarly-50 p-3 rounded border border-scholarly-100">
+                                <i class="fa-solid fa-graduation-cap text-scholarly-600 mt-1"></i>
+                                <span><strong>Learner Corpora:</strong> Syntactic complexity and progression in L2 English writing.</span>
+                            </div>
+                            <div class="flex items-start gap-2 bg-scholarly-50 p-3 rounded border border-scholarly-100">
+                                <i class="fa-solid fa-network-wired text-scholarly-600 mt-1"></i>
+                                <span><strong>Universal Dependencies:</strong> Multilingual treebanks, cross-linguistic variance, and Esperanto.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Research Tags & Language Competence -->
+                <div class="space-y-6">
+                    <div class="bg-white p-6 rounded-lg border academic-border card-shadow space-y-4">
+                        <h3 class="text-lg font-bold text-scholarly-900 border-b border-slate-200 pb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-tags text-scholarly-600 text-sm"></i> Research Fields
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 bg-scholarly-100 text-scholarly-900 text-xs rounded font-medium border border-scholarly-200">Computational Linguistics</span>
+                            <span class="px-2.5 py-1 bg-scholarly-100 text-scholarly-900 text-xs rounded font-medium border border-scholarly-200">Quantitative Syntax</span>
+                            <span class="px-2.5 py-1 bg-scholarly-100 text-scholarly-900 text-xs rounded font-medium border border-scholarly-200">Universal Dependencies</span>
+                            <span class="px-2.5 py-1 bg-scholarly-100 text-scholarly-900 text-xs rounded font-medium border border-scholarly-200">Graph Theory & Centrality</span>
+                            <span class="px-2.5 py-1 bg-scholarly-100 text-scholarly-900 text-xs rounded font-medium border border-scholarly-200">Learner Corpus Analysis</span>
+                            <span class="px-2.5 py-1 bg-scholarly-100 text-scholarly-900 text-xs rounded font-medium border border-scholarly-200">Lexical-Functional Grammar</span>
+                            <span class="px-2.5 py-1 bg-scholarly-100 text-scholarly-900 text-xs rounded font-medium border border-scholarly-200">Propositional Idea Density</span>
+                            <span class="px-2.5 py-1 bg-scholarly-100 text-scholarly-900 text-xs rounded font-medium border border-scholarly-200">Bilingual Parallel Corpora</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg border academic-border card-shadow space-y-3">
+                        <h3 class="text-lg font-bold text-scholarly-900 border-b border-slate-200 pb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-language text-scholarly-600 text-sm"></i> Languages
+                        </h3>
+                        <ul class="text-sm space-y-2 text-slate-700">
+                            <li class="flex items-center justify-between">
+                                <span class="font-medium">Japanese</span>
+                                <span class="text-xs bg-slate-100 px-2 py-0.5 rounded text-slate-600 border border-slate-200">Native Speaker</span>
+                            </li>
+                            <li class="flex items-center justify-between">
+                                <span class="font-medium">English</span>
+                                <span class="text-xs bg-scholarly-100 text-scholarly-800 px-2 py-0.5 rounded font-medium border border-scholarly-200">Academic / Fluent</span>
+                            </li>
+                            <li class="flex items-center justify-between">
+                                <span class="font-medium">German</span>
+                                <span class="text-xs bg-slate-100 px-2 py-0.5 rounded text-slate-600 border border-slate-200">Elementary</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Academic Appointments -->
+        <section id="appointments" class="scroll-mt-20">
+            <div class="flex items-center gap-3 mb-6 border-b border-slate-300 pb-3">
+                <span class="p-2.5 rounded bg-scholarly-100 text-scholarly-800">
+                    <i class="fa-solid fa-briefcase text-xl"></i>
+                </span>
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-scholarly-950">Academic Appointments</h2>
+                    <p class="text-sm text-slate-600 italic">Teaching and research appointments at universities in Japan and internationally</p>
+                </div>
+            </div>
+
+            <div class="relative pl-6 sm:pl-8 border-l-2 border-scholarly-300 space-y-8">
+                <!-- Appointment: Professor Meiji -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[39px] top-1 w-4 h-4 rounded-full bg-scholarly-600 ring-4 ring-white"></div>
+                    <div class="bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
+                            <h3 class="text-lg font-bold text-scholarly-900">Professor</h3>
+                            <span class="text-xs sm:text-sm font-semibold px-2.5 py-0.5 bg-scholarly-100 text-scholarly-800 rounded border border-scholarly-200 w-fit mt-1 sm:mt-0">
+                                Apr, 2022 &ndash; Present
+                            </span>
+                        </div>
+                        <p class="text-sm font-semibold text-slate-700">School of Global Japanese Studies, Meiji University</p>
+                        <p class="text-xs text-slate-500 mt-1">Teaching undergraduate and graduate courses in English linguistics and corpus linguistics; graduate supervision.</p>
+                    </div>
+                </div>
+
+                <!-- Appointment: Visiting Scholar Georgetown -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[39px] top-1 w-4 h-4 rounded-full bg-scholarly-400 ring-4 ring-white"></div>
+                    <div class="bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
+                            <h3 class="text-lg font-bold text-scholarly-900 flex items-center gap-2">
+                                <span>Visiting Scholar</span>
+                                <a href="https://gufaculty360.georgetown.edu/s/contact/003UH00000xdw71YAA/masanori-oya" target="_blank" class="text-xs text-scholarly-600 hover:text-scholarly-800" title="Georgetown Faculty 360 Profile">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </h3>
+                            <span class="text-xs sm:text-sm font-semibold px-2.5 py-0.5 bg-scholarly-50 text-scholarly-700 rounded border border-scholarly-200 w-fit mt-1 sm:mt-0">
+                                Jul, 2026 &ndash; Apr, 2027
+                            </span>
+                        </div>
+                        <p class="text-sm font-semibold text-slate-700">Department of Linguistics, Georgetown University</p>
+                        <p class="text-xs text-slate-500 mt-1">Visiting scholar conducting collaborative research in corpus linguistics, dependency grammar, and computational syntactic representations.</p>
+                    </div>
+                </div>
+
+                <!-- Appointment: Part-time Lecturer Waseda -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[39px] top-1 w-4 h-4 rounded-full bg-slate-400 ring-4 ring-white"></div>
+                    <div class="bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
+                            <h3 class="text-lg font-bold text-scholarly-900">Part-Time Lecturer</h3>
+                            <span class="text-xs sm:text-sm font-semibold px-2.5 py-0.5 bg-slate-100 text-slate-700 rounded border border-slate-200 w-fit mt-1 sm:mt-0">
+                                Apr, 2009 &ndash; Mar, 2026
+                            </span>
+                        </div>
+                        <p class="text-sm font-semibold text-slate-700">School of Education, Waseda University</p>
+                    </div>
+                </div>
+
+                <!-- Appointment: Associate Professor Meiji -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[39px] top-1 w-4 h-4 rounded-full bg-slate-400 ring-4 ring-white"></div>
+                    <div class="bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
+                            <h3 class="text-lg font-bold text-scholarly-900">Associate Professor</h3>
+                            <span class="text-xs sm:text-sm font-semibold px-2.5 py-0.5 bg-slate-100 text-slate-700 rounded border border-slate-200 w-fit mt-1 sm:mt-0">
+                                Apr, 2019 &ndash; Mar, 2022
+                            </span>
+                        </div>
+                        <p class="text-sm font-semibold text-slate-700">School of Global Japanese Studies, Meiji University</p>
+                    </div>
+                </div>
+
+                <!-- Appointment: Associate Professor Mejiro -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[39px] top-1 w-4 h-4 rounded-full bg-slate-300 ring-4 ring-white"></div>
+                    <div class="bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
+                            <h3 class="text-lg font-bold text-scholarly-900">Associate Professor</h3>
+                            <span class="text-xs sm:text-sm font-semibold px-2.5 py-0.5 bg-slate-100 text-slate-700 rounded border border-slate-200 w-fit mt-1 sm:mt-0">
+                                Sep, 2014 &ndash; Mar, 2019
+                            </span>
+                        </div>
+                        <p class="text-sm font-semibold text-slate-700">Department of English Language Studies, Faculty of Foreign Language Studies, Mejiro University</p>
+                    </div>
+                </div>
+
+                <!-- Appointment: Assistant Professor Mejiro -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[39px] top-1 w-4 h-4 rounded-full bg-slate-300 ring-4 ring-white"></div>
+                    <div class="bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
+                            <h3 class="text-lg font-bold text-scholarly-900">Assistant Professor</h3>
+                            <span class="text-xs sm:text-sm font-semibold px-2.5 py-0.5 bg-slate-100 text-slate-700 rounded border border-slate-200 w-fit mt-1 sm:mt-0">
+                                Apr, 2011 &ndash; Sep, 2014
+                            </span>
+                        </div>
+                        <p class="text-sm font-semibold text-slate-700">Department of English Language Studies, Faculty of Foreign Language Studies, Mejiro University</p>
+                    </div>
+                </div>
+
+                <!-- Previous Lecturer Positions -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[39px] top-1 w-4 h-4 rounded-full bg-slate-200 ring-4 ring-white"></div>
+                    <div class="bg-white p-5 rounded-lg border academic-border card-shadow">
+                        <h3 class="text-base font-bold text-scholarly-900">Earlier Lecturer & Academic Appointments</h3>
+                        <ul class="mt-2 text-sm text-slate-700 space-y-1.5 list-disc list-inside">
+                            <li><strong>Part-time Lecturer</strong>, School of Education, Waseda University (Apr, 2002 &ndash; Mar, 2006)</li>
+                            <li><strong>Part-time Lecturer</strong>, Kokugakuin University (Apr, 1999 &ndash; Mar, 2006)</li>
+                            <li><strong>Research Assistant (助手)</strong>, School of Education, Waseda University (Apr, 1999 &ndash; Mar, 2002)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Education -->
+        <section id="education" class="scroll-mt-20">
+            <div class="flex items-center gap-3 mb-6 border-b border-slate-300 pb-3">
+                <span class="p-2.5 rounded bg-scholarly-100 text-scholarly-800">
+                    <i class="fa-solid fa-user-graduate text-xl"></i>
+                </span>
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-scholarly-950">Education & Academic Degrees</h2>
+                    <p class="text-sm text-slate-600 italic">Advanced research degrees in Computer Science and English Education/Linguistics</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Dublin City University -->
+                <div class="bg-white p-6 rounded-lg border academic-border card-shadow relative overflow-hidden flex flex-col justify-between">
+                    <div class="border-t-4 border-scholarly-600 absolute top-0 left-0 right-0"></div>
+                    <div>
+                        <div class="flex items-center justify-between text-xs text-scholarly-700 font-semibold mb-2 pt-2">
+                            <span>DUBLIN CITY UNIVERSITY</span>
+                            <span class="bg-scholarly-100 px-2.5 py-0.5 rounded border border-scholarly-200">Oct, 2005 &ndash; Mar, 2010</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-scholarly-950">School of Computing</h3>
+                        <p class="text-sm font-semibold text-slate-700 mt-1">Postgraduate Research / Computational Linguistics</p>
+                        <div class="mt-4 p-3 bg-scholarly-50 rounded border border-scholarly-100 text-sm">
+                            <span class="font-bold text-scholarly-900 text-xs uppercase tracking-wide block mb-1">Doctoral Dissertation:</span>
+                            <p class="italic text-slate-800 leading-relaxed">
+                                &ldquo;Treebank-based Automatic Acquisition of Wide Coverage, Deep Linguistic Resources for Japanese&rdquo;
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Waseda University - Doctoral -->
+                <div class="bg-white p-6 rounded-lg border academic-border card-shadow relative overflow-hidden flex flex-col justify-between">
+                    <div class="border-t-4 border-scholarly-700 absolute top-0 left-0 right-0"></div>
+                    <div>
+                        <div class="flex items-center justify-between text-xs text-scholarly-700 font-semibold mb-2 pt-2">
+                            <span>WASEDA UNIVERSITY</span>
+                            <span class="bg-scholarly-100 px-2.5 py-0.5 rounded border border-scholarly-200">Apr, 1997 &ndash; Mar, 2002</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-scholarly-950">Doctoral Program, Graduate School of Education</h3>
+                        <p class="text-sm font-semibold text-slate-700 mt-1">Course Education Major (Ph.D. degree conferred)</p>
+                        <div class="mt-4 p-3 bg-scholarly-50 rounded border border-scholarly-100 text-sm">
+                            <span class="font-bold text-scholarly-900 text-xs uppercase tracking-wide block mb-1">Doctoral Dissertation:</span>
+                            <p class="italic text-slate-800 leading-relaxed">
+                                &ldquo;A Study of Syntactic Typed-Dependency Trees for English and Japanese and Graph-centrality Measures&rdquo;
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Waseda University - Master's -->
+                <div class="bg-white p-6 rounded-lg border academic-border card-shadow relative overflow-hidden">
+                    <div class="border-t-4 border-slate-400 absolute top-0 left-0 right-0"></div>
+                    <div class="flex items-center justify-between text-xs text-slate-600 font-semibold mb-2 pt-2">
+                        <span>WASEDA UNIVERSITY</span>
+                        <span class="bg-slate-100 px-2.5 py-0.5 rounded border border-slate-200">Apr, 1995 &ndash; Mar, 1997</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-scholarly-950">Master's Program, Graduate School of Education</h3>
+                    <p class="text-sm font-semibold text-slate-700 mt-1">English Education Major (Master of Arts)</p>
+                    <p class="text-xs text-slate-600 mt-2">Specialization in English linguistics, syntax, and pedagogical grammar.</p>
+                </div>
+
+                <!-- Waseda University - Bachelor's -->
+                <div class="bg-white p-6 rounded-lg border academic-border card-shadow relative overflow-hidden">
+                    <div class="border-t-4 border-slate-400 absolute top-0 left-0 right-0"></div>
+                    <div class="flex items-center justify-between text-xs text-slate-600 font-semibold mb-2 pt-2">
+                        <span>WASEDA UNIVERSITY</span>
+                        <span class="bg-slate-100 px-2.5 py-0.5 rounded border border-slate-200">Apr, 1991 &ndash; Mar, 1995</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-scholarly-950">School of Education</h3>
+                    <p class="text-sm font-semibold text-slate-700 mt-1">Department of English Language and Literature (Bachelor of Arts)</p>
+                    <p class="text-xs text-slate-600 mt-2">Foundational studies in English linguistics, literature, and educational pedagogy.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Grants & Research Projects -->
+        <section id="grants" class="scroll-mt-20">
+            <div class="flex items-center gap-3 mb-6 border-b border-slate-300 pb-3">
+                <span class="p-2.5 rounded bg-scholarly-100 text-scholarly-800">
+                    <i class="fa-solid fa-hand-holding-dollar text-xl"></i>
+                </span>
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-scholarly-950">Major Research Grants & Funding</h2>
+                    <p class="text-sm text-slate-600 italic">Competitive Grants-in-Aid for Scientific Research (KAKENHI) from the Japan Society for the Promotion of Science (JSPS)</p>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Project 1 (Current Active) -->
+                <div class="bg-white p-6 rounded-lg border border-scholarly-400 card-shadow relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-scholarly-700 text-white text-xs px-3 py-1 font-semibold rounded-bl">
+                        ACTIVE PROJECT
+                    </div>
+                    <div class="flex flex-col md:flex-row md:items-start justify-between gap-2 mb-2">
+                        <span class="text-xs font-bold uppercase tracking-wider text-scholarly-700">
+                            Grant-in-Aid for Scientific Research (C) &bull; JSPS
+                        </span>
+                        <span class="text-xs font-semibold text-slate-500 md:text-right">Apr, 2024 &ndash; Mar, 2027</span>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-scholarly-950 leading-snug">
+                        Analyses of English learners' production data using propositional idea density as a complexity measure
+                    </h3>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-slate-600">
+                        <div><strong class="text-slate-800">Principal Investigator:</strong> Masanori Oya</div>
+                        <div><strong class="text-slate-800">Grant Number:</strong> <span class="font-mono bg-scholarly-50 text-scholarly-800 px-1.5 py-0.5 rounded border border-scholarly-200">24K04089</span></div>
+                        <div><strong class="text-slate-800">Funding Body:</strong> Japan Society for the Promotion of Science (JSPS)</div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white p-6 rounded-lg border academic-border card-shadow">
+                    <div class="flex flex-col md:flex-row md:items-start justify-between gap-2 mb-2">
+                        <span class="text-xs font-bold uppercase tracking-wider text-scholarly-700">
+                            Grant-in-Aid for Scientific Research (C) &bull; JSPS
+                        </span>
+                        <span class="text-xs font-semibold text-slate-500 md:text-right">Apr, 2020 &ndash; Mar, 2024</span>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-scholarly-950 leading-snug">
+                        Development of an English corpus with visualized interrelationships among sentences in the framework of dependency grammar
+                    </h3>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-slate-600">
+                        <div><strong class="text-slate-800">Principal Investigator:</strong> Masanori Oya</div>
+                        <div><strong class="text-slate-800">Grant Number:</strong> <span class="font-mono bg-slate-100 text-slate-800 px-1.5 py-0.5 rounded border border-slate-200">20K00583</span></div>
+                        <div><strong class="text-slate-800">Funding Body:</strong> JSPS KAKENHI</div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-white p-6 rounded-lg border academic-border card-shadow">
+                    <div class="flex flex-col md:flex-row md:items-start justify-between gap-2 mb-2">
+                        <span class="text-xs font-bold uppercase tracking-wider text-scholarly-700">
+                            Grant-in-Aid for Scientific Research (C) &bull; JSPS
+                        </span>
+                        <span class="text-xs font-semibold text-slate-500 md:text-right">Apr, 2017 &ndash; Mar, 2020</span>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-scholarly-950 leading-snug">
+                        Extracting the information of syntactic divergence from a Japanese-English parallel corpus and applying the data
+                    </h3>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-slate-600">
+                        <div><strong class="text-slate-800">Principal Investigator:</strong> Masanori Oya</div>
+                        <div><strong class="text-slate-800">Grant Number:</strong> <span class="font-mono bg-slate-100 text-slate-800 px-1.5 py-0.5 rounded border border-slate-200">17K02740</span></div>
+                        <div><strong class="text-slate-800">Funding Body:</strong> JSPS KAKENHI</div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="bg-white p-6 rounded-lg border academic-border card-shadow">
+                    <div class="flex flex-col md:flex-row md:items-start justify-between gap-2 mb-2">
+                        <span class="text-xs font-bold uppercase tracking-wider text-scholarly-700">
+                            Grant-in-Aid for Scientific Research (C) &bull; JSPS
+                        </span>
+                        <span class="text-xs font-semibold text-slate-500 md:text-right">Apr, 2014 &ndash; Mar, 2017</span>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-scholarly-950 leading-snug">
+                        Analysis of structural characteristics of Japanese and English sentences based on Dependency Grammar and Graph theory
+                    </h3>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-slate-600">
+                        <div><strong class="text-slate-800">Principal Investigator:</strong> Masanori Oya</div>
+                        <div><strong class="text-slate-800">Grant Number:</strong> <span class="font-mono bg-slate-100 text-slate-800 px-1.5 py-0.5 rounded border border-slate-200">26370500</span></div>
+                        <div><strong class="text-slate-800">Funding Body:</strong> JSPS KAKENHI</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Peer-Reviewed Publications -->
+        <section id="publications" class="scroll-mt-20">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 border-b border-slate-300 pb-3">
+                <div class="flex items-center gap-3">
+                    <span class="p-2.5 rounded bg-scholarly-100 text-scholarly-800">
+                        <i class="fa-solid fa-book-open text-xl"></i>
+                    </span>
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-scholarly-950">Peer-Reviewed Publications</h2>
+                        <p class="text-sm text-slate-600 italic">Journal articles and international conference proceeding papers</p>
+                    </div>
+                </div>
+
+                <!-- Instant Filter / Search Bar -->
+                <div class="w-full sm:w-72">
+                    <div class="relative">
+                        <input type="text" id="pub-search" placeholder="Search publication title or year..." 
+                               class="w-full pl-9 pr-3 py-1.5 text-sm border academic-border rounded bg-white text-slate-800 focus:outline-none focus:ring-2 focus:ring-scholarly-500 focus:border-transparent">
+                        <i class="fa-solid fa-magnifying-glass text-slate-400 absolute left-3 top-2.5 text-xs"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Era Filter Tabs -->
+            <div class="flex flex-wrap gap-2 mb-6">
+                <button onclick="filterEra('all')" class="era-tab px-3 py-1 text-xs sm:text-sm rounded font-medium transition border bg-scholarly-700 text-white border-scholarly-700" data-filter="all">All (30+)</button>
+                <button onclick="filterEra('2020s')" class="era-tab px-3 py-1 text-xs sm:text-sm rounded font-medium transition border bg-white text-slate-700 border-slate-300 hover:bg-slate-50" data-filter="2020s">2020 &ndash; Present</button>
+                <button onclick="filterEra('2010s')" class="era-tab px-3 py-1 text-xs sm:text-sm rounded font-medium transition border bg-white text-slate-700 border-slate-300 hover:bg-slate-50" data-filter="2010s">2010 &ndash; 2019</button>
+                <button onclick="filterEra('pre2010')" class="era-tab px-3 py-1 text-xs sm:text-sm rounded font-medium transition border bg-white text-slate-700 border-slate-300 hover:bg-slate-50" data-filter="pre2010">1997 &ndash; 2009</button>
+            </div>
+
+            <!-- Publications Container -->
+            <div id="pub-list" class="space-y-4">
+
+                <!-- 2025/2026 -->
+                <div class="pub-item bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400" data-year="2025" data-era="2020s">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-scholarly-700 mb-1">
+                        <span class="px-2 py-0.5 rounded bg-scholarly-100 border border-scholarly-200">2025</span>
+                        <span>QUASY &bull; SyntaxFest 2025</span>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 leading-snug">
+                        Degree centrality as a measure of robustness of dependency structures of the sentences in a large-scale learner corpus of English
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-1">
+                        <strong>Masanori Oya</strong>. (2025). <em>Proceedings of the Third Workshop on Quantitative Syntax (QUASY, SyntaxFest 2025)</em>, pp. 9&ndash;16.
+                    </p>
+                </div>
+
+                <div class="pub-item bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400" data-year="2025" data-era="2020s">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-scholarly-700 mb-1">
+                        <span class="px-2 py-0.5 rounded bg-scholarly-100 border border-scholarly-200">2025</span>
+                        <span>UDW &bull; Universal Dependencies Workshop</span>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 leading-snug">
+                        UD Treebanks for Esperanto as a natural language
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-1">
+                        <strong>Masanori Oya</strong>. (2025). <em>Proceedings of the Eighth Workshop on Universal Dependencies (UDW, SyntaxFest 2025)</em>, pp. 22&ndash;29.
+                    </p>
+                </div>
+
+                <div class="pub-item bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400" data-year="2025" data-era="2020s">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-scholarly-700 mb-1">
+                        <span class="px-2 py-0.5 rounded bg-scholarly-100 border border-scholarly-200">2025</span>
+                        <span>Global Japanese Studies Review</span>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 leading-snug">
+                        Complexity of English Sentences in English Textbooks for High School Students in Japan
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-1">
+                        <strong>Masanori Oya</strong>. (2025). <em>Global Japanese Studies Review</em>, 17(1), pp. 1&ndash;10.
+                    </p>
+                </div>
+
+                <!-- 2024 -->
+                <div class="pub-item bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400" data-year="2024" data-era="2020s">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-scholarly-700 mb-1">
+                        <span class="px-2 py-0.5 rounded bg-scholarly-100 border border-scholarly-200">2024</span>
+                        <span>PACLIC 38</span>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 leading-snug">
+                        Cross-Linguistic Variances of Dependency Distances in Multi-Lingual Parallel Corpus
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-1">
+                        <strong>Masanori Oya</strong>. (2024). <em>Proceedings of the 38th Pacific Asia Conference on Language, Information and Computation (PACLIC 38)</em>.
+                    </p>
+                </div>
+
+                <div class="pub-item bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400" data-year="2024" data-era="2020s">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-scholarly-700 mb-1">
+                        <span class="px-2 py-0.5 rounded bg-scholarly-100 border border-scholarly-200">2024</span>
+                        <span>PACLIC 37</span>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 leading-snug">
+                        Low-Frequency Long-Distance Dependencies as &ldquo;Long Tails&rdquo;
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-1">
+                        <strong>Masanori Oya</strong>. (2024). <em>Proceedings of the 37th Pacific Asia Conference on Language, Information and Computing (PACLIC 37)</em>.
+                    </p>
+                </div>
+
+                <!-- 2023 -->
+                <div class="pub-item bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400" data-year="2023" data-era="2020s">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-scholarly-700 mb-1">
+                        <span class="px-2 py-0.5 rounded bg-scholarly-100 border border-scholarly-200">2023</span>
+                        <span>Global Japanese Studies Review</span>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 leading-snug">
+                        Propositional Idea Density of a Japanese Text and its English Translation in a Parallel Corpus
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-1">
+                        <strong>Masanori Oya</strong>. (2023). <em>Global Japanese Studies Review</em>, 15(1), pp. 97&ndash;105.
+                    </p>
+                </div>
+
+                <div class="pub-item bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400" data-year="2023" data-era="2020s">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-scholarly-700 mb-1">
+                        <span class="px-2 py-0.5 rounded bg-scholarly-100 border border-scholarly-200">2023</span>
+                        <span>Glottometrics</span>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 leading-snug">
+                        Differences of Mean Dependency Distances of English Essays Written by Learners of Different Proficiency Levels
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-1">
+                        <strong>Masanori Oya</strong>. (2023). <em>Glottometrics</em>, 53, pp. 24&ndash;41.
+                    </p>
+                </div>
+
+                <!-- 2022 -->
+                <div class="pub-item bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400" data-year="2022" data-era="2020s">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-scholarly-700 mb-1">
+                        <span class="px-2 py-0.5 rounded bg-scholarly-100 border border-scholarly-200">2022</span>
+                        <span>PACLIC 36</span>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 leading-snug">
+                        Curve-fitting of frequency distributions of dependency distances in a multi-lingual parallel corpus
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-1">
+                        <strong>Masanori Oya</strong>. (2022). <em>Proceedings of the 36th Pacific Asia Conference on Language, Information and Computation (PACLIC 36)</em>, pp. 396&ndash;404.
+                    </p>
+                </div>
+
+                <div class="pub-item bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400" data-year="2022" data-era="2020s">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-scholarly-700 mb-1">
+                        <span class="px-2 py-0.5 rounded bg-scholarly-100 border border-scholarly-200">2022</span>
+                        <span>Thailand TESOL</span>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 leading-snug">
+                        The Relevance of Dependency Distances in the Study of L2 Production
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-1">
+                        <strong>Masanori Oya</strong>. (2022). <em>The 41st Thailand TESOL Conference Proceedings</em>.
+                    </p>
+                </div>
+
+                <div class="pub-item bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400" data-year="2022" data-era="2020s">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-scholarly-700 mb-1">
+                        <span class="px-2 py-0.5 rounded bg-scholarly-100 border border-scholarly-200">2022</span>
+                        <span>Global Japanese Studies Review</span>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 leading-snug">
+                        Developing a Japanese-English Parallel Corpus of &ldquo;Japan, the Beautiful and Myself&rdquo; by Yasunari Kawabata
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-1">
+                        <strong>Masanori Oya</strong>. (2022). <em>Global Japanese Studies Review</em>, 14(1), pp. 13&ndash;26.
+                    </p>
+                </div>
+
+                <!-- 2021 -->
+                <div class="pub-item bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400" data-year="2021" data-era="2020s">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-scholarly-700 mb-1">
+                        <span class="px-2 py-0.5 rounded bg-scholarly-100 border border-scholarly-200">2021</span>
+                        <span>PACLIC 35</span>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 leading-snug">
+                        Three Types of Average Dependency Distances of Sentences in a Multilingual Parallel Corpus
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-1">
+                        <strong>Masanori Oya</strong>. (2021). <em>Proceedings of the 35th Pacific Asia Conference on Language, Information and Computation (PACLIC 35)</em>.
+                    </p>
+                </div>
+
+                <div class="pub-item bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400" data-year="2021" data-era="2020s">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-scholarly-700 mb-1">
+                        <span class="px-2 py-0.5 rounded bg-scholarly-100 border border-scholarly-200">2021</span>
+                        <span>PACLIC 34</span>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 leading-snug">
+                        Syntactic Similarity of the Sentences in a Multi-Lingual Parallel Corpus Based on the Euclidean Distance of Their Dependency Trees
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-1">
+                        <strong>Masanori Oya</strong>. (2021). <em>Proceedings of the 34th Pacific Asia Conference on Language, Information and Computation (PACLIC 34)</em>, pp. 225&ndash;233.
+                    </p>
+                </div>
+
+                <div class="pub-item bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400" data-year="2021" data-era="2020s">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-scholarly-700 mb-1">
+                        <span class="px-2 py-0.5 rounded bg-scholarly-100 border border-scholarly-200">2021</span>
+                        <span>Global Japanese Studies Review</span>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 leading-snug">
+                        Analysis and Quantification of the Network of Lexical Connectedness Within a Text Based on Metrics Used in Network Analysis
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-1">
+                        <strong>Masanori Oya</strong>. (2021). <em>Global Japanese Studies Review</em>, Meiji University, 13(1), pp. 15&ndash;38.
+                    </p>
+                </div>
+
+                <!-- 2020 -->
+                <div class="pub-item bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400" data-year="2020" data-era="2020s">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-scholarly-700 mb-1">
+                        <span class="px-2 py-0.5 rounded bg-scholarly-100 border border-scholarly-200">2020</span>
+                        <span>Global Japanese Studies Review</span>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 leading-snug">
+                        Structural Divergence Between Root Elements in English-Japanese Translation Pairs
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-1">
+                        <strong>Masanori Oya</strong>. (2020). <em>Global Japanese Studies Review</em>, Meiji University, 12(1), pp. 107&ndash;126.
+                    </p>
+                </div>
+
+                <!-- 2019 - 2010 -->
+                <div class="pub-item bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400" data-year="2019" data-era="2010s">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-scholarly-700 mb-1">
+                        <span class="px-2 py-0.5 rounded bg-slate-100 border border-slate-200">2019</span>
+                        <span>PACLIC 33</span>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 leading-snug">
+                        A Corpus-Based Investigation of Collexemes for Active-Passive Alternation in the English Part of an English-Japanese Parallel Corpus
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-1">
+                        <strong>Masanori Oya</strong>. (2019). <em>Proceedings of the 33rd Pacific Asia Conference on Language, Information and Computation (PACLIC 33)</em>, pp. 516&ndash;521.
+                    </p>
+                </div>
+
+                <div class="pub-item bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400" data-year="2018" data-era="2010s">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-scholarly-700 mb-1">
+                        <span class="px-2 py-0.5 rounded bg-slate-100 border border-slate-200">2018</span>
+                        <span>PACLIC 32</span>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 leading-snug">
+                        Utilization of Dependency Type per Sentence to Identify Differences Among Genres of English Texts
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-1">
+                        <strong>Masanori Oya</strong>. (2018). <em>Proceedings of the 32nd Pacific Asia Conference on Language, Information and Computation (PACLIC 32)</em>.
+                    </p>
+                </div>
+
+                <div class="pub-item bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400" data-year="2017" data-era="2010s">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-scholarly-700 mb-1">
+                        <span class="px-2 py-0.5 rounded bg-slate-100 border border-slate-200">2017</span>
+                        <span>English Corpus Studies</span>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 leading-snug">
+                        Syntactic Divergence Patterns Among English Translations of Japanese One-Word Sentences in a Parallel Corpus
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-1">
+                        <strong>Masanori Oya</strong>. (2017). <em>English Corpus Studies</em>, (24), pp. 19&ndash;40.
+                    </p>
+                </div>
+
+                <div class="pub-item bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400" data-year="2015" data-era="2010s">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-scholarly-700 mb-1">
+                        <span class="px-2 py-0.5 rounded bg-slate-100 border border-slate-200">2015</span>
+                        <span>Mejiro Journals of Humanity</span>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 leading-snug">
+                        Japanese One-Word Sentences and Their English Translations in a Parallel Corpus
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-1">
+                        <strong>Masanori Oya</strong>. (2015). <em>Mejiro Journals of Humanity</em>, 11(11), pp. 237&ndash;248.
+                    </p>
+                </div>
+
+                <div class="pub-item bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400" data-year="2014" data-era="2010s">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-scholarly-700 mb-1">
+                        <span class="px-2 py-0.5 rounded bg-slate-100 border border-slate-200">2014</span>
+                        <span>PAAL 19</span>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 leading-snug">
+                        An English-Japanese Bilingual Corpus-Based Comparison of Their Syntactic Dependency Structures
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-1">
+                        <strong>Masanori Oya</strong>. (2014). <em>Proceedings of the 19th Conference of Pan-Pacific Association of Applied Linguistics</em>, pp. 69&ndash;70.
+                    </p>
+                </div>
+
+                <div class="pub-item bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400" data-year="2014" data-era="2010s">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-scholarly-700 mb-1">
+                        <span class="px-2 py-0.5 rounded bg-slate-100 border border-slate-200">2014</span>
+                        <span>Mejiro Journal of Humanities</span>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 leading-snug">
+                        Typed-dependency Tree Pairs of English and Japanese
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-1">
+                        <strong>Masanori Oya</strong>. (2014). <em>Mejiro Journal of Humanities</em>, 10(10), pp. 205&ndash;215.
+                    </p>
+                </div>
+
+                <div class="pub-item bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400" data-year="2014" data-era="2010s">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-scholarly-700 mb-1">
+                        <span class="px-2 py-0.5 rounded bg-slate-100 border border-slate-200">2014</span>
+                        <span>PAAL Selected Papers</span>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 leading-snug">
+                        Treatment of Zero Pronouns in the Framework of Lexical-Functional Grammar
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-1">
+                        <strong>Masanori Oya</strong>. (2014). <em>Selected Papers from the 18th Conference of Pan-Pacific Applied Linguistics</em>.
+                    </p>
+                </div>
+
+                <div class="pub-item bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400" data-year="2013" data-era="2010s">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-scholarly-700 mb-1">
+                        <span class="px-2 py-0.5 rounded bg-slate-100 border border-slate-200">2013</span>
+                        <span>ICT Practice & Research</span>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 leading-snug">
+                        Lexical-Functional Grammar and Dependency Grammar
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-1">
+                        <strong>Masanori Oya</strong>. (2013). <em>Information Communication Technology Practice & Research</em>, pp. 19&ndash;32.
+                    </p>
+                </div>
+
+                <div class="pub-item bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400" data-year="2013" data-era="2010s">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-scholarly-700 mb-1">
+                        <span class="px-2 py-0.5 rounded bg-slate-100 border border-slate-200">2013</span>
+                        <span>PAAL Selected Papers</span>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 leading-snug">
+                        Degree Centralities, Closeness Centralities, and Dependency Distances of Different Genres of Texts
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-1">
+                        <strong>Masanori Oya</strong>. (2013). <em>Selected Papers from the 17th Conference of Pan-Pacific Applied Linguistics</em>, pp. 42&ndash;53.
+                    </p>
+                </div>
+
+                <div class="pub-item bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400" data-year="2011" data-era="2010s">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-scholarly-700 mb-1">
+                        <span class="px-2 py-0.5 rounded bg-slate-100 border border-slate-200">2011</span>
+                        <span>PAAL 16</span>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 leading-snug">
+                        Syntactic Dependency Distance as Sentence Complexity Measure
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-1">
+                        <strong>Masanori Oya</strong>. (2011). <em>Proceedings of the 16th International Conference of Pan-Pacific Association</em>, pp. 313&ndash;316.
+                    </p>
+                </div>
+
+                <!-- Pre-2010 -->
+                <div class="pub-item bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400" data-year="2004" data-era="pre2010">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-slate-600 mb-1">
+                        <span class="px-2 py-0.5 rounded bg-slate-100 border border-slate-200">2004</span>
+                        <span>PAAL 8</span>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 leading-snug">
+                        On the Properties of Japanese Case Marker &lsquo;-ga&rsquo;: An LFG Account
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-1">
+                        <strong>Masanori Oya</strong>. (2004). <em>Proceedings of the 8th Conference of Pan-Pacific Association of Applied Linguistics</em>, pp. 349&ndash;360.
+                    </p>
+                </div>
+
+                <div class="pub-item bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400" data-year="2003" data-era="pre2010">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-slate-600 mb-1">
+                        <span class="px-2 py-0.5 rounded bg-slate-100 border border-slate-200">2003</span>
+                        <span>PAAL 7</span>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 leading-snug">
+                        An LFG Account of Contrastive Particle <em>wa</em> in Japanese
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-1">
+                        <strong>Masanori Oya</strong>. (2003). <em>Proceedings of the 7th Conference of Pan-Pacific Association of Applied Linguistics</em>, pp. 167&ndash;180.
+                    </p>
+                </div>
+
+                <div class="pub-item bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400" data-year="2000" data-era="pre2010">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-slate-600 mb-1">
+                        <span class="px-2 py-0.5 rounded bg-slate-100 border border-slate-200">2000</span>
+                        <span>PAAL 5</span>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 leading-snug">
+                        Lexical-Functional Grammar and Its Pedagogical Implication of Japanese EFL Students: Theoretical Issues on the Acquisition of the Progressive
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-1">
+                        <strong>Masanori Oya</strong>. (2000). <em>Proceedings of the 5th Conference of Pan-Pacific Association of Applied Linguistics</em>, pp. 183&ndash;189.
+                    </p>
+                </div>
+
+                <div class="pub-item bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400" data-year="1998" data-era="pre2010">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-slate-600 mb-1">
+                        <span class="px-2 py-0.5 rounded bg-slate-100 border border-slate-200">1998</span>
+                        <span>Japan-Korea Association of Applied Linguistics</span>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 leading-snug">
+                        Part-of-Speech Alternations of English Predicates; An Optimality Hypothesis Account
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-1">
+                        <strong>Masanori Oya</strong>. (1998). <em>Proceedings of the 3rd Conference of Japan-Korea Association of Applied Linguistics</em>, pp. 172&ndash;185.
+                    </p>
+                </div>
+
+                <div class="pub-item bg-white p-5 rounded-lg border academic-border card-shadow transition hover:border-scholarly-400" data-year="1997" data-era="pre2010">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-slate-600 mb-1">
+                        <span class="px-2 py-0.5 rounded bg-slate-100 border border-slate-200">1997</span>
+                        <span>Journal of Applied Linguistics</span>
+                    </div>
+                    <h3 class="text-base font-bold text-slate-900 leading-snug">
+                        Beyond Lexical Aspect
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-1">
+                        <strong>Masanori Oya</strong>. (1997). <em>Journal of Japan-Korea Association of Applied Linguistics</em>, pp. 127&ndash;147.
+                    </p>
+                </div>
+
+            </div>
+            <div id="no-pub-msg" class="hidden text-center py-8 text-slate-500 italic bg-white rounded border border-slate-200">
+                No matching publications found for this query.
+            </div>
+        </section>
+
+        <!-- Section 6: Refereed Conference Presentations -->
+        <section id="presentations" class="scroll-mt-20">
+            <div class="flex items-center gap-3 mb-6 border-b border-slate-300 pb-3">
+                <span class="p-2.5 rounded bg-scholarly-100 text-scholarly-800">
+                    <i class="fa-solid fa-person-chalkboard text-xl"></i>
+                </span>
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-scholarly-950">Refereed Conference Presentations</h2>
+                    <p class="text-sm text-slate-600 italic">Oral papers and invited conference talks</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-white p-4 sm:p-5 rounded-lg border academic-border card-shadow">
+                    <span class="text-xs font-bold text-scholarly-700 bg-scholarly-50 px-2 py-0.5 rounded border border-scholarly-100">Dec 8, 2024</span>
+                    <h4 class="font-bold text-slate-900 text-sm mt-1.5">Cross-Linguistic Variances of Dependency Distances in Multi-Lingual Parallel Corpus</h4>
+                    <p class="text-xs text-slate-600 mt-1">The 38th Annual Meeting of Pacific Asia Conference on Language, Information and Computation (PACLIC 38).</p>
+                </div>
+
+                <div class="bg-white p-4 sm:p-5 rounded-lg border academic-border card-shadow">
+                    <span class="text-xs font-bold text-scholarly-700 bg-scholarly-50 px-2 py-0.5 rounded border border-scholarly-100">Dec 3, 2023</span>
+                    <h4 class="font-bold text-slate-900 text-sm mt-1.5">Low-Frequency Long-Distance Dependencies as &ldquo;Long Tails&rdquo;</h4>
+                    <p class="text-xs text-slate-600 mt-1">The 37th Annual Meeting of Pacific Asia Conference on Language, Information and Computation (PACLIC 37).</p>
+                </div>
+
+                <div class="bg-white p-4 sm:p-5 rounded-lg border academic-border card-shadow">
+                    <span class="text-xs font-bold text-scholarly-700 bg-scholarly-50 px-2 py-0.5 rounded border border-scholarly-100">Oct 20, 2022</span>
+                    <h4 class="font-bold text-slate-900 text-sm mt-1.5">Curve-fitting of frequency distributions of dependency distances in a multi-lingual parallel corpus</h4>
+                    <p class="text-xs text-slate-600 mt-1">The 36th Annual Meeting of Pacific Asia Conference on Language, Information and Computation (PACLIC 36).</p>
+                </div>
+
+                <div class="bg-white p-4 sm:p-5 rounded-lg border academic-border card-shadow">
+                    <span class="text-xs font-bold text-scholarly-700 bg-scholarly-50 px-2 py-0.5 rounded border border-scholarly-100">Aug 20, 2022</span>
+                    <h4 class="font-bold text-slate-900 text-sm mt-1.5">Idea Density of English Textbooks for Japanese Junior-High School Students</h4>
+                    <p class="text-xs text-slate-600 mt-1">Masanori Oya, Norifumi Ueda, Kazuharu Owada, Koichi Ano, Tetsuya Kashiwagi. <em>PAAL 2022 Conference</em>.</p>
+                </div>
+
+                <div class="bg-white p-4 sm:p-5 rounded-lg border border-scholarly-300 card-shadow">
+                    <div class="flex items-center gap-2">
+                        <span class="text-xs font-bold text-scholarly-800 bg-scholarly-100 px-2 py-0.5 rounded border border-scholarly-200">Jan 22, 2022</span>
+                        <span class="text-xs uppercase bg-amber-100 text-amber-800 px-1.5 py-0.5 rounded font-bold">Invited Speaker</span>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-sm mt-1.5">The Relevance of Dependency Distances in the Study of L2 Production</h4>
+                    <p class="text-xs text-slate-600 mt-1">The 41st Thailand TESOL International (Virtual) Conference.</p>
+                </div>
+
+                <div class="bg-white p-4 sm:p-5 rounded-lg border academic-border card-shadow">
+                    <span class="text-xs font-bold text-scholarly-700 bg-scholarly-50 px-2 py-0.5 rounded border border-scholarly-100">Nov 7, 2021</span>
+                    <h4 class="font-bold text-slate-900 text-sm mt-1.5">Three Types of Average Dependency Distances of Sentences in a Multilingual Parallel Corpus</h4>
+                    <p class="text-xs text-slate-600 mt-1">Pacific Asia Conference on Language, Information and Computation (PACLIC 35).</p>
+                </div>
+
+                <div class="bg-white p-4 sm:p-5 rounded-lg border academic-border card-shadow">
+                    <span class="text-xs font-bold text-scholarly-700 bg-scholarly-50 px-2 py-0.5 rounded border border-scholarly-100">Oct 24, 2020</span>
+                    <h4 class="font-bold text-slate-900 text-sm mt-1.5">Syntactic Similarity of the Sentences in a Multi-Lingual Parallel Corpus Based on Euclidean Distance of Dependency Trees</h4>
+                    <p class="text-xs text-slate-600 mt-1">Pacific Asia Conference on Language, Information and Computation (PACLIC 34).</p>
+                </div>
+
+                <div class="bg-white p-4 sm:p-5 rounded-lg border academic-border card-shadow">
+                    <span class="text-xs font-bold text-scholarly-700 bg-scholarly-50 px-2 py-0.5 rounded border border-scholarly-100">Sep 15, 2019</span>
+                    <h4 class="font-bold text-slate-900 text-sm mt-1.5">A Corpus-Based Investigation of Collexemes for Active-Passive Alternation in an English-Japanese Parallel Corpus</h4>
+                    <p class="text-xs text-slate-600 mt-1">Pacific Asia Conference on Language, Information and Computation (PACLIC 33).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Teaching & Professional Memberships -->
+        <section id="teaching" class="scroll-mt-20">
+            <div class="flex items-center gap-3 mb-6 border-b border-slate-300 pb-3">
+                <span class="p-2.5 rounded bg-scholarly-100 text-scholarly-800">
+                    <i class="fa-solid fa-chalkboard-user text-xl"></i>
+                </span>
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-scholarly-950">Teaching & Professional Service</h2>
+                    <p class="text-sm text-slate-600 italic">Academic instruction, graduate student advising, and professional society affiliations</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Courses Column -->
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="bg-white p-6 rounded-lg border academic-border card-shadow">
+                        <div class="flex items-center justify-between border-b border-slate-200 pb-2 mb-3">
+                            <h3 class="text-base font-bold text-scholarly-900 flex items-center gap-2">
+                                <i class="fa-solid fa-graduation-cap text-scholarly-600"></i> Undergrad Courses &bull; Meiji University
+                            </h3>
+                            <span class="text-xs text-slate-500 font-medium">School of Global Japanese Studies</span>
+                        </div>
+                        <div class="space-y-3 text-sm">
+                            <div class="p-3 bg-scholarly-50/70 rounded border border-scholarly-100">
+                                <strong class="text-slate-900 block font-bold">English Linguistics</strong>
+                                <span class="text-xs text-slate-600">Spring & Fall 2019 &ndash; 2024</span>
+                                <p class="text-xs text-slate-700 mt-1">Comprehensive introduction to theoretical and applied linguistics for undergraduate majors.</p>
+                            </div>
+                            <div class="p-3 bg-scholarly-50/70 rounded border border-scholarly-100">
+                                <strong class="text-slate-900 block font-bold">Seminar on Linguistics</strong>
+                                <span class="text-xs text-slate-600">Spring & Fall 2021 &ndash; 2024</span>
+                                <p class="text-xs text-slate-700 mt-1">Introduction to corpus linguistics and empirical text analysis methodology.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg border academic-border card-shadow">
+                        <div class="flex items-center justify-between border-b border-slate-200 pb-2 mb-3">
+                            <h3 class="text-base font-bold text-scholarly-900 flex items-center gap-2">
+                                <i class="fa-solid fa-award text-scholarly-600"></i> Graduate Courses &bull; Meiji University
+                            </h3>
+                            <span class="text-xs text-slate-500 font-medium">Graduate School of Global Japanese Studies</span>
+                        </div>
+                        <div class="space-y-3 text-sm">
+                            <div class="p-3 bg-scholarly-50/70 rounded border border-scholarly-100">
+                                <strong class="text-slate-900 block font-bold">Corpus Linguistics</strong>
+                                <span class="text-xs text-slate-600">Spring & Fall 2023 &ndash; 2024</span>
+                                <p class="text-xs text-slate-700 mt-1">Graduate-level introduction to computational corpus linguistics, treebanks, and quantitative syntactic metrics.</p>
+                            </div>
+                            <div class="p-3 bg-scholarly-50/70 rounded border border-scholarly-100">
+                                <strong class="text-slate-900 block font-bold">Seminar on Corpus Linguistics</strong>
+                                <span class="text-xs text-slate-600">Spring & Fall 2024</span>
+                                <p class="text-xs text-slate-700 mt-1">Advanced research seminar and direct supervision of Master's and Ph.D. students.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Societies Column -->
+                <div class="bg-white p-6 rounded-lg border academic-border card-shadow space-y-4">
+                    <h3 class="text-base font-bold text-scholarly-900 border-b border-slate-200 pb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-building-columns text-scholarly-600"></i> Professional Memberships
+                    </h3>
+                    <ul class="text-sm space-y-3 text-slate-800">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-scholarly-600 text-xs mt-1"></i>
+                            <div>
+                                <span class="font-bold block text-scholarly-950">JAECS</span>
+                                <span class="text-xs text-slate-600">Japan Association for English Corpus Studies</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-scholarly-600 text-xs mt-1"></i>
+                            <div>
+                                <span class="font-bold block text-scholarly-950">ELSJ</span>
+                                <span class="text-xs text-slate-600">The English Linguistic Society of Japan</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-scholarly-600 text-xs mt-1"></i>
+                            <div>
+                                <span class="font-bold block text-scholarly-950">LSJ</span>
+                                <span class="text-xs text-slate-600">The Linguistic Society of Japan</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-scholarly-600 text-xs mt-1"></i>
+                            <div>
+                                <span class="font-bold block text-scholarly-950">ANLP</span>
+                                <span class="text-xs text-slate-600">The Association for Natural Language Processing</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-scholarly-600 text-xs mt-1"></i>
+                            <div>
+                                <span class="font-bold block text-scholarly-950">PAAL</span>
+                                <span class="text-xs text-slate-600">Pan-Pacific Association of Applied Linguistics</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Institutional Scholarly Footer -->
+    <footer class="bg-[#0a1524] text-slate-300 border-t border-scholarly-900 py-12 text-sm mt-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 pb-8 border-b border-slate-800">
+                <div>
+                    <h4 class="text-white text-base font-bold mb-3 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-scholarly-400"></span>
+                        Masanori Oya, Ph.D.
+                    </h4>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-3">
+                        Professor of English Linguistics, School of Global Japanese Studies, Meiji University.
+                    </p>
+                    <p class="text-xs text-slate-400">
+                        Visiting Scholar, Department of Linguistics, Georgetown University.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white text-base font-bold mb-3">Academic Links</h4>
+                    <ul class="text-xs space-y-2">
+                        <li>
+                            <a href="https://gufaculty360.georgetown.edu/s/contact/003UH00000xdw71YAA/masanori-oya" target="_blank" rel="noopener noreferrer" class="text-scholarly-300 hover:underline flex items-center gap-1.5">
+                                <i class="fa-solid fa-up-right-from-square text-[10px]"></i> Georgetown University Faculty 360
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://researchmap.jp/m_oya?lang=en" target="_blank" rel="noopener noreferrer" class="text-scholarly-300 hover:underline flex items-center gap-1.5">
+                                <i class="fa-solid fa-up-right-from-square text-[10px]"></i> Researchmap Researcher Page
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/MasanoriOya" target="_blank" rel="noopener noreferrer" class="text-scholarly-300 hover:underline flex items-center gap-1.5">
+                                <i class="fa-solid fa-up-right-from-square text-[10px]"></i> GitHub Repository (@MasanoriOya)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.meiji.ac.jp/cip/english/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:underline flex items-center gap-1.5">
+                                <i class="fa-solid fa-university text-[10px]"></i> Meiji University Global Portal
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white text-base font-bold mb-3">Office Location</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        School of Global Japanese Studies, Meiji University<br>
+                        4-21-1 Nakano, Nakano City, Tokyo 164-8525, Japan
+                    </p>
+                    <div class="mt-3 text-xs">
+                        <span class="text-slate-400 block">Inquiries:</span>
+                        <a href="mailto:masanori_oya2019@meiji.ac.jp" class="text-scholarly-300 hover:underline">
+                            masanori_oya2019@meiji.ac.jp
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-2">
+                <p>&copy; Masanori Oya. All rights reserved.</p>
+                <p class="italic">Last updated from CV records &bull; January 2026</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Filtering & Search Script -->
+    <script>
+        // Mobile Navigation Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile drawer when a link is tapped
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Search & Era Filter Logic
+        let activeEra = 'all';
+        const searchInput = document.getElementById('pub-search');
+        const pubItems = document.querySelectorAll('.pub-item');
+        const noPubMsg = document.getElementById('no-pub-msg');
+        const eraTabs = document.querySelectorAll('.era-tab');
+
+        function applyFilters() {
+            const query = searchInput.value.toLowerCase().trim();
+            let visibleCount = 0;
+
+            pubItems.forEach(item => {
+                const text = item.innerText.toLowerCase();
+                const itemEra = item.getAttribute('data-era');
+                const matchesSearch = query === '' || text.includes(query);
+                const matchesEra = (activeEra === 'all') || (itemEra === activeEra);
+
+                if (matchesSearch && matchesEra) {
+                    item.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            if (visibleCount === 0) {
+                noPubMsg.classList.remove('hidden');
+            } else {
+                noPubMsg.classList.add('hidden');
+            }
+        }
+
+        searchInput.addEventListener('input', applyFilters);
+
+        function filterEra(era) {
+            activeEra = era;
+            eraTabs.forEach(tab => {
+                if (tab.getAttribute('data-filter') === era) {
+                    tab.classList.remove('bg-white', 'text-slate-700', 'border-slate-300');
+                    tab.classList.add('bg-scholarly-700', 'text-white', 'border-scholarly-700');
+                } else {
+                    tab.classList.remove('bg-scholarly-700', 'text-white', 'border-scholarly-700');
+                    tab.classList.add('bg-white', 'text-slate-700', 'border-slate-300');
+                }
+            });
+            applyFilters();
+        }
+    </script>
 </body>
 </html>
-
-
